@@ -1,9 +1,4 @@
-﻿using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Text.Json;
-
-namespace Muljin.B2CMagicLink;
+﻿namespace Muljin.B2CMagicLink;
 
 /// <summary>
 /// Main OpenID Connect service for generating tokens and getting configuration

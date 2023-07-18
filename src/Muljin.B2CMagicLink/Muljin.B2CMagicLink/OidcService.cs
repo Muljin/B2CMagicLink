@@ -4,6 +4,7 @@ using System.Text;
 using System.Text.Json;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace Muljin.B2CMagicLink.AzureKeyVault
 {
@@ -41,11 +42,17 @@ namespace Muljin.B2CMagicLink.AzureKeyVault
 
         public async Task<string> BuildSerializedIdTokenAsync(string audience, int duration, string userEmail)
         {
-            // Parameters that are transmited in the ID Token assertion are communicated as claims
-            var claims = new List<System.Security.Claims.Claim>
+            var claims = new List<System.Security.Claims.Claim>()
             {
                 new System.Security.Claims.Claim("email", userEmail, System.Security.Claims.ClaimValueTypes.String, _oidcOptions.Issuer)
             };
+
+            return await BuildSerializedIdTokenAsync(audience, duration, claims);
+        }
+
+        public async Task<string> BuildSerializedIdTokenAsync(string audience, int duration, List<System.Security.Claims.Claim> claims)
+        {
+
             var header = new JwtHeader(_certificateProvider.SigningCredentials);
             var payload = new JwtPayload(
                     _oidcOptions.Issuer,
