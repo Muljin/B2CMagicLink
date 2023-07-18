@@ -46,13 +46,6 @@ namespace Muljin.B2CMagicLink.AzureKeyVault
             {
                 new System.Security.Claims.Claim("email", userEmail, System.Security.Claims.ClaimValueTypes.String, _oidcOptions.Issuer)
             };
-
-            return await BuildSerializedIdTokenAsync(audience, duration, claims);
-        }
-
-        public async Task<string> BuildSerializedIdTokenAsync(string audience, int duration, List<System.Security.Claims.Claim> claims)
-        {
-
             var header = new JwtHeader(_certificateProvider.SigningCredentials);
             var payload = new JwtPayload(
                     _oidcOptions.Issuer,
@@ -121,7 +114,7 @@ namespace Muljin.B2CMagicLink.AzureKeyVault
             var keyModel = new JwksKeyModel
             {
                 Kid = _certificateProvider.SigningCredentials.Kid,
-                Kty = _certificateProvider.SigningCredentials.Algorithm, //"RSA", 
+                Kty = "RSA", 
                 Nbf = new DateTimeOffset(certificate.NotBefore).ToUnixTimeSeconds(),
                 Use = "sig",
                 Alg = _certificateProvider.SigningCredentials.Algorithm,

@@ -169,7 +169,7 @@
   <RelyingParty>
     <DefaultUserJourney ReferenceId="SignUpOrSignInWithEmail" />
     <UserJourneyBehaviors>
-      <JourneyInsights TelemetryEngine="ApplicationInsights" InstrumentationKey="9362c996-c7fd-49de-98bc-f1a3a4ff7a26" DeveloperMode="true" ClientEnabled="false" ServerEnabled="true" TelemetryVersion="1.0.0" />
+      <JourneyInsights TelemetryEngine="ApplicationInsights" InstrumentationKey="c7267a6d-50fc-4a35-be2d-5155f40efa3d" DeveloperMode="true" ClientEnabled="true" ServerEnabled="true" TelemetryVersion="1.0.0" />
     </UserJourneyBehaviors>
     <TechnicalProfile Id="PolicyProfile">
       <DisplayName>PolicyProfile</DisplayName>
