@@ -46,9 +46,6 @@ namespace Muljin.B2CMagicLink.Example.Services
                                 {
                                     a.QueryParameters.Filter = filter;
                                 });
-                                //.Request()
-                                //.Filter(filter)
-                                //.GetAsync();
 
             return users?.Value?.Select(u => AzureAdB2cUserObjectMapper.Map(u, _tokenIssuer)).FirstOrDefault();
         }

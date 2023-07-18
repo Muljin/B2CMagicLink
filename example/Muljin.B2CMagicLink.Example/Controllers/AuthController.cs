@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Muljin.B2CMagicLink.Example.Models;
+using Muljin.B2CMagicLink.Example.Services;
 
 namespace Muljin.B2CMagicLink.Example.Controllers;
 
@@ -8,25 +9,23 @@ namespace Muljin.B2CMagicLink.Example.Controllers;
 public class AuthController : ControllerBase
 {
 
+    private readonly UsersService _usersService; 
     private readonly ILogger<AuthController> _logger;
 
-    public AuthController(ILogger<AuthController> logger)
+    public AuthController(ILogger<AuthController> logger,
+        UsersService usersService)
     {
         _logger = logger;
+        _usersService = usersService;
     }
 
-    [HttpPost("signup")]    
-    public IActionResult Signup([FromBody]CreateUserRequest req)
-    {
-        throw new NotImplementedException();
-    }
 
     [HttpGet("signin")]
-    public IActionResult SignIn([FromQuery]string email)
+    public async Task<IActionResult> SignIn([FromQuery]string email)
     {
-        throw new NotImplementedException();
+        await _usersService.SignupOrSigninAsync(email);
+        return new OkResult();
     }
-
 
 }
 

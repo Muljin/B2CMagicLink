@@ -41,10 +41,13 @@ public static class Install
             builder.AddKeyClient(new Uri(keyVaultOptions.KeyVaultUri));
             builder.AddCertificateClient(new Uri(keyVaultOptions.KeyVaultUri));
         });
-        services.AddScoped(s =>
+
+        services.AddSingleton(s =>
         {
             return new CryptographyClientFactory(azureTokenCredentials);
         });
+
+        services.AddSingleton<ICertificateProvider, KeyVaultCertificateProvider>();
 
         return services;
     }

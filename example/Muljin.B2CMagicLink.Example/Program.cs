@@ -2,6 +2,7 @@
 using Azure.Identity;
 using Muljin.B2CMagicLink;
 using Muljin.B2CMagicLink.Example.Models;
+using Muljin.B2CMagicLink.Example.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +20,11 @@ builder.Configuration.GetSection("AzureAd").Bind(azureAdOptions);
 builder.Services.Configure<AzureAdOptions>(
     builder.Configuration.GetSection("AzureAd"));
 
-builder.Services.Configure<Muljin.B2CMagicLink.Example.Models.AzureAdB2cOptions>(builder.Configuration.GetSection("AzureAdB2c"));
+builder.Services.Configure<AzureAdB2cOptions>(
+    builder.Configuration.GetSection("AzureAdB2c"));
+
+builder.Services.Configure<SendGridOptions>(
+    builder.Configuration.GetSection("SendGrid"));
 
 //setup credentials
 TokenCredential creds = new ClientSecretCredential(azureAdOptions!.TenantId,
@@ -29,6 +34,11 @@ TokenCredential creds = new ClientSecretCredential(azureAdOptions!.TenantId,
 //add magic link
 builder.Services.AddB2CMagicLink(builder.Configuration);
 builder.Services.AddB2CMagicLinkKeyVault(builder.Configuration, creds);
+
+//add example services
+builder.Services.AddScoped<AzureAdB2cService>();
+builder.Services.AddScoped<EmailService>();
+builder.Services.AddScoped<UsersService>();
 
 var app = builder.Build();
 

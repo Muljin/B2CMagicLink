@@ -3,15 +3,17 @@ namespace Muljin.B2CMagicLink.Example.Models
 {
     public record AzureAdB2cOptions
     {
-        public required string ClientId { get; init; }
+        public string ClientId { get; init; } = string.Empty;
 
-        public required string ClientSecret { get; init; }
+        public string ClientSecret { get; init; } = string.Empty;
 
-        public required string DomainOrig { get; init; }
+        public string DomainOrig { get; init; } = string.Empty;
 
-        public required string TenantId { get; init; }
+        public string MagicLinkFlowUrl { get; init; } = string.Empty;
 
-        public required string TokenIssuer { get; init; }
+        public string TenantId { get; init; } = string.Empty;
+
+        public string TokenIssuer { get; init; } = string.Empty;
 
     }
 }
