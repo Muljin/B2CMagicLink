@@ -1,0 +1,50 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1705.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Muljin.B2CMagicLink.Example", "Muljin.B2CMagicLink.Example.csproj", "{84EAF114-FC2A-49DA-9BCB-DFE58AE50319}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Muljin.B2CMagicLink", "..\..\src\Muljin.B2CMagicLink\Muljin.B2CMagicLink\Muljin.B2CMagicLink.csproj", "{B576A6A4-8E13-4EB0-B77D-61BF4D033CFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Muljin.B2CMagicLink.AzureKeyVault", "..\..\src\Muljin.B2CMagicLink\Muljin.B2CMagicLink.AzureKeyVault\Muljin.B2CMagicLink.AzureKeyVault.csproj", "{9D62FC13-301D-41D9-9687-2CE4C8F90B2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Muljin.B2CMagicLink.Abstractions", "..\..\src\Muljin.B2CMagicLink\Muljin.B2CMagicLink.Abstractions\Muljin.B2CMagicLink.Abstractions.csproj", "{AAA7108E-6904-41F0-90BF-53041D3F26EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{769B4293-C71C-477E-A1B2-7B471671D47D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84EAF114-FC2A-49DA-9BCB-DFE58AE50319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84EAF114-FC2A-49DA-9BCB-DFE58AE50319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84EAF114-FC2A-49DA-9BCB-DFE58AE50319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84EAF114-FC2A-49DA-9BCB-DFE58AE50319}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B576A6A4-8E13-4EB0-B77D-61BF4D033CFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B576A6A4-8E13-4EB0-B77D-61BF4D033CFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B576A6A4-8E13-4EB0-B77D-61BF4D033CFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B576A6A4-8E13-4EB0-B77D-61BF4D033CFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D62FC13-301D-41D9-9687-2CE4C8F90B2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D62FC13-301D-41D9-9687-2CE4C8F90B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D62FC13-301D-41D9-9687-2CE4C8F90B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D62FC13-301D-41D9-9687-2CE4C8F90B2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAA7108E-6904-41F0-90BF-53041D3F26EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAA7108E-6904-41F0-90BF-53041D3F26EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAA7108E-6904-41F0-90BF-53041D3F26EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAA7108E-6904-41F0-90BF-53041D3F26EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2DC3F38C-21B3-40D1-9BF8-626BE3BDB796}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B576A6A4-8E13-4EB0-B77D-61BF4D033CFA} = {769B4293-C71C-477E-A1B2-7B471671D47D}
+		{AAA7108E-6904-41F0-90BF-53041D3F26EA} = {769B4293-C71C-477E-A1B2-7B471671D47D}
+		{9D62FC13-301D-41D9-9687-2CE4C8F90B2F} = {769B4293-C71C-477E-A1B2-7B471671D47D}
+	EndGlobalSection
+EndGlobal

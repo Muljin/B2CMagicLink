@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1705.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Muljin.B2CMagicLink", "Muljin.B2CMagicLink\Muljin.B2CMagicLink.csproj", "{44EFD4EB-1A3C-4187-9880-5ACE9030E0BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Muljin.B2CMagicLink.Abstractions", "Muljin.B2CMagicLink.Abstractions\Muljin.B2CMagicLink.Abstractions.csproj", "{B2C3C621-F8C1-411B-8C72-B9C86A600FE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Muljin.B2CMagicLink.AzureKeyVault", "Muljin.B2CMagicLink.AzureKeyVault\Muljin.B2CMagicLink.AzureKeyVault.csproj", "{0B6DC618-0AC9-4B57-9A18-CB381742BB5C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44EFD4EB-1A3C-4187-9880-5ACE9030E0BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44EFD4EB-1A3C-4187-9880-5ACE9030E0BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44EFD4EB-1A3C-4187-9880-5ACE9030E0BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44EFD4EB-1A3C-4187-9880-5ACE9030E0BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2C3C621-F8C1-411B-8C72-B9C86A600FE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2C3C621-F8C1-411B-8C72-B9C86A600FE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2C3C621-F8C1-411B-8C72-B9C86A600FE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2C3C621-F8C1-411B-8C72-B9C86A600FE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B6DC618-0AC9-4B57-9A18-CB381742BB5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B6DC618-0AC9-4B57-9A18-CB381742BB5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B6DC618-0AC9-4B57-9A18-CB381742BB5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B6DC618-0AC9-4B57-9A18-CB381742BB5C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {58592F70-6081-44C9-BFC3-5D7180F2A7C0}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+EndGlobal
