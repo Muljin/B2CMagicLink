@@ -26,7 +26,7 @@ namespace Muljin.B2CMagicLink.Example.Services
 				});
 			}
 
-			var token = 
+			var token = _oidcService.BuildSerializedIdTokenAsync("notchecked", 15, email);
 		}
 	}
 }
