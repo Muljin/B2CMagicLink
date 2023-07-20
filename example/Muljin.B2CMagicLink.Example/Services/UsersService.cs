@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.Extensions.Options;
+using Muljin.B2CMagicLink.Example.Models;
 
 namespace Muljin.B2CMagicLink.Example.Services
 {

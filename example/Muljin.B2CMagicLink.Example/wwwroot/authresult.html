@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muljin Magic Link Tester</title>
+    <script type="text/javascript" src="https://alcdn.msauth.net/browser/2.35.0/js/msal-browser.min.js"></script>
+</head>
+<body>
+    <h1>Auth results:</h1>
+    <div id="output">...</div>
+
+    <script>
+        var muljin = muljin || {};
+        const msalConfig = {
+        auth: {
+            clientId: '64257a7a-3240-4021-8860-45af0bbd6734',
+            authority: 'https://muljin.b2clogin.com/tfp/14182de3-6b9b-4138-a0fa-e4107db293e5/B2C_1A_SIGNIN_WITH_EMAIL',
+            knownAuthorities: ['https://muljin.b2clogin.com/tfp/14182de3-6b9b-4138-a0fa-e4107db293e5/B2C_1A_SIGNIN_WITH_EMAIL']
+        }
+    };
+
+    function loadMsal(){
+        muljin.output = document.querySelector('#output');
+        muljin.msalInstance = new msal.PublicClientApplication(msalConfig);
+        muljin.msalInstance.initialize().then(checkForCode);
+    }
+
+    function checkForCode(){
+        muljin.output.innerHTML = "Checking for code...";
+        var code = window.location.search.split('code=')[1];
+        if(code !=null && code != undefined){
+            console.log(code);
+            muljin.output.innerHTML = "Code found. Exchanging for token...";
+            exchangeCodeForToken(code);
+        }
+        else{
+            muljin.output.innerHTML = "No code found";
+        }
+    }
+
+    function exchangeCodeForToken(code){
+        muljin.msalInstance.acquireTokenByCode({code: code, scopes: ['openid'], redirectUri: "https://jwt.ms"}).then(function(response){
+            console.log(response);
+            muljin.output.innerHTML = "Token received: " + response.accessToken;
+        })
+        .catch(function(error){
+            console.log(error);
+            muljin.output.innerHTML = "Error: " + error;
+        });
+    }
+
+    window.addEventListener('load', loadMsal);
+    </script>
+</body>
+</html>

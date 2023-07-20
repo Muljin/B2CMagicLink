@@ -11,6 +11,8 @@ namespace Muljin.B2CMagicLink.Example.Models
 
         public string MagicLinkFlowUrl { get; init; } = string.Empty;
 
+        public string RedirectUrl { get; init; } = string.Empty;
+
         public string TenantId { get; init; } = string.Empty;
 
         public string TokenIssuer { get; init; } = string.Empty;

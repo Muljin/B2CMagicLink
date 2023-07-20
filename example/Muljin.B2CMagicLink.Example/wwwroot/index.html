@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muljin Magic Link Tester</title>
+</head>
+<body>
+    <h2>Enter your email above to get a magic link</h2>
+    <div>
+        <input type="email" >
+        <button>Login</button>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        var muljin = muljin || {};
+    
+        (function()
+        {
+    
+            function setup(){
+                const button = document.querySelector('button');
+                const input = document.querySelector('input');
+                const output = document.querySelector('#output');
+    
+                var m = new MagicLinkExampe(button, input, output);
+            }
+    
+            function MagicLinkExampe(button, input, output)
+            {
+                this.button = button;
+                this.input = input;
+                this.output = output;
+                this.called = false;
+                this.button.addEventListener('click', this.onClick.bind(this));
+                console.log("Ready");
+            }
+    
+            MagicLinkExampe.prototype.onClick = function(event)
+            {
+                console.log("Called onclick");
+                if (event) {
+                    event.preventDefault();
+                }
+    
+                if(this.called){
+                    return;
+                }
+                this,output.innerHTML = "Sending magic link to " + this.input.value;
+    
+                this.called = true;
+                this.button.disabled = true;
+                this.input.disabled = true;
+    
+                //xhr request
+                var req = new XMLHttpRequest();
+                //on state change events. Assume 200 is only correct status, anything over 400 is an error. everything else ignored for now.
+                var me = this;
+                req.onreadystatechange = function () {
+                    if (req.status === 200) {
+                        this.called = false;
+                        this.output.innerHTML = "Request sent. Please check your email.";
+                    } else if (req.status >= 400) {
+                        this.called = false;
+                        this.output.innerHTML = "Sorry there was an error. Please ensure your email was correct";
+                    }
+                }.bind(me);
+    
+                var curUrl = window.location.href;
+                curUrl = curUrl.replace("index.html", "");
+                if(!curUrl.endsWith("/")){
+                    curUrl += "/";
+                }
+                curUrl += "auth/signin?email=" + this.input.value;
+    
+                req.open("GET", curUrl);
+                // req.setRequestHeader("Content-type", "application/json");
+                req.send();
+            }
+    
+            window.addEventListener('load', setup);
+    
+        })();
+    
+    </script>
+</body>
+</html>
+
