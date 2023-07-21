@@ -4,8 +4,26 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <RootNamespace>$(MSBuildProjectName.Replace(" ", "_").Replace(".Abstractions",""))</RootNamespace>
+    <RootNamespace>Muljin.B2CMagicLink</RootNamespace>
+    <AssemblyName>Muljin.B2CMagicLink.Abstractions</AssemblyName>
+    <PackageId>Muljin.B2CMagicLink.Abstractions</PackageId>
+    <Authors>Mahmoud Swehli</Authors>
+    <Company>Muljin Pte. Ltd.</Company>
+    <Product>Muljin.B2CMagicLink</Product>
+    <Description>Muljin Magic Link library for Azure AD B2C, common models, packages and interfaces.</Description>
+    <Copyright>Muljin Pte. Ltd.</Copyright>
+    <PackageProjectUrl>https://www.muljin.com/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Muljin/B2CMagicLink</RepositoryUrl>
+    <Version>0.0.1</Version>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
+
+   <ItemGroup>
+    <None Include="..\..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Muljin.Common" Version="2.2.10" />
