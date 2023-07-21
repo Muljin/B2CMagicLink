@@ -16,14 +16,47 @@
         auth: {
             clientId: '64257a7a-3240-4021-8860-45af0bbd6734',
             authority: 'https://muljin.b2clogin.com/tfp/14182de3-6b9b-4138-a0fa-e4107db293e5/B2C_1A_SIGNIN_WITH_EMAIL',
-            knownAuthorities: ['https://muljin.b2clogin.com/tfp/14182de3-6b9b-4138-a0fa-e4107db293e5/B2C_1A_SIGNIN_WITH_EMAIL']
+            knownAuthorities: ['https://muljin.b2clogin.com/']
         }
     };
 
     function loadMsal(){
         muljin.output = document.querySelector('#output');
         muljin.msalInstance = new msal.PublicClientApplication(msalConfig);
-        muljin.msalInstance.initialize().then(checkForCode);
+
+        muljin.msalInstance.initialize().then(handleRedirect);
+    }
+
+    function handleRedirect(){
+        muljin.msalInstance
+            .handleRedirectPromise()
+            .then((tokenResponse) => {
+                // Handle redirect response
+                console.dir(tokenResponse);
+                muljin.output.innerHTML = tokenResponse.idToken;
+            })
+            .catch((error) => {
+                console.log("Error:");
+                console.dir(error);
+                checkForIdTokenHint();
+            });
+    }
+
+    function checkForIdTokenHint(){
+        muljin.output.innerHTML = "Checking for code...";
+        var idTokenHint = window.location.search.split('id_token_hint=')[1];
+        if(idTokenHint==null || idTokenHint == undefined || typeof idTokenHint != 'string')
+        {
+            muljin.output.innerHTML = "No id_token_hint found.";
+            checkForCode();
+            return;
+        }
+
+        muljin.output.innerHTML = "ID token found, redirecting to login...";
+        muljin.msalInstance.loginRedirect({scopes: ['openid'], 
+            prompt: 'none', 
+            redirectUri: "https://" + window.location.host + '/authresult.html', 
+            extraQueryParameters: {'id_token_hint': idTokenHint }});
     }
 
     function checkForCode(){
@@ -36,11 +69,21 @@
         }
         else{
             muljin.output.innerHTML = "No code found";
+            checkForError();
         }
     }
 
+    function checkForError(){
+        var error = window.location.hash.split('error=')[1];
+        if(error != null && error != undefined){
+            muljin.output.innerHTML = unescape(error);
+        }
+        
+    }
+
     function exchangeCodeForToken(code){
-        muljin.msalInstance.acquireTokenByCode({code: code, scopes: ['openid'], redirectUri: "https://jwt.ms"}).then(function(response){
+        var redirecturi = window.location.host + "/authresult.html";
+        muljin.msalInstance.acquireTokenByCode({code: code, codeVerifier:123, scopes: ['openid'], redirectUri: redirecturi}).then(function(response){
             console.log(response);
             muljin.output.innerHTML = "Token received: " + response.accessToken;
         })
