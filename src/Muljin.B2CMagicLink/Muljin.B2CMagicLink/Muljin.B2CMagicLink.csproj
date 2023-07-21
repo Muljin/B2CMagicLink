@@ -29,9 +29,7 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Azure" Version="1.6.3" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Muljin.B2CMagicLink.Abstractions\Muljin.B2CMagicLink.Abstractions.csproj" />
+    <PackageReference Include="Muljin.B2CMagicLink.Abstractions" Version="0.0.1" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Controllers\" />

@@ -4,6 +4,8 @@ This library allows you to (relatively) easily integrate Magic Links into your A
 
 This library has been tested on .net 7.0. It may work with earlier versions, however all referenced nuget packages are based on the latest available versions and will continue to be updated to the latest available versions where applicable. 
 
+Example can be tested at [http://muljinmagiclinkexample.azurewebsites.net/](http://muljinmagiclinkexample.azurewebsites.net/)
+
 ### What is a Magic Link?
 A magic link is a passwordless form of authentication where by a token can be emailed or messaged to a user and exchanged for an authentication token. This allows for a smoother authentication flow for users where they do not need to set or remember any additional passwords.
 

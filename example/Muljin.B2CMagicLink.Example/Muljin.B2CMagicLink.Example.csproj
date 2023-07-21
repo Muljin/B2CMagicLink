@@ -14,16 +14,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     <PackageReference Include="Microsoft.Graph" Version="5.18.0" />
     <PackageReference Include="SendGrid" Version="9.28.1" />
+    <PackageReference Include="Muljin.B2CMagicLink.AzureKeyVault" Version="0.0.1" />
+    <PackageReference Include="Muljin.B2CMagicLink" Version="0.0.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Muljin.B2CMagicLink\Muljin.B2CMagicLink.AzureKeyVault\Muljin.B2CMagicLink.AzureKeyVault.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Muljin.B2CMagicLink\Muljin.B2CMagicLink\Muljin.B2CMagicLink.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup>
     <None Remove="Models\" />
     <None Remove="Services\" />
