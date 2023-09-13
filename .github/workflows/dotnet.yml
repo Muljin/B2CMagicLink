@@ -29,7 +29,5 @@ jobs:
         run: dotnet pack --configuration Release -o ./out
         working-directory: ./src/Muljin.B2CMagicLink/Muljin.B2CMagicLink.Abstractions
       - name: Push to nuget
-        env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
-        run: dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --api-key "$env:NUGET_API_KEY"
+        run: dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
         working-directory: ./src/Muljin.B2CMagicLink/Muljin.B2CMagicLink.Abstractions/out

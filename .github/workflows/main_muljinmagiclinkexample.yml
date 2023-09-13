@@ -2,11 +2,17 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
 name: Build and deploy ASP.Net Core app to Azure Web App - muljinmagiclinkexample
-
 on:
   push:
     branches:
       - main
+    paths:
+      - src/example Muljin/**
+      - .github/workflows/dotnet.yml
+
+  pull_request:
+    branches: [ "main" ]
+
   workflow_dispatch:
 
 jobs:
