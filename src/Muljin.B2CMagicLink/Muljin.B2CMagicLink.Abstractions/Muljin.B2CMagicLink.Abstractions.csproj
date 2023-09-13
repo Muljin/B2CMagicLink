@@ -17,7 +17,6 @@
     <Version>0.0.2</Version>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
-
    <ItemGroup>
     <None Include="..\..\..\LICENSE">
       <Pack>True</Pack>
