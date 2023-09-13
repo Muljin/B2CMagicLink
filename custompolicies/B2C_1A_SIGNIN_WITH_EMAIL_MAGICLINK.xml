@@ -126,7 +126,7 @@
     </ClaimsProvider>
   </ClaimsProviders>
   <UserJourneys>
-    <UserJourney Id="SignUpOrSignInWithEmail">
+    <UserJourney Id="SignInWithEmail">
       <OrchestrationSteps>
         <!--Sample: Read the input claims from the id_token_hint-->
         <OrchestrationStep Order="1" Type="GetClaims" CpimIssuerTechnicalProfileReferenceId="IdTokenHint_ExtractClaims" />
@@ -167,7 +167,7 @@
     </UserJourney>
   </UserJourneys>
   <RelyingParty>
-    <DefaultUserJourney ReferenceId="SignUpOrSignInWithEmail" />
+    <DefaultUserJourney ReferenceId="SignInWithEmail" />
     <UserJourneyBehaviors>
       <JourneyInsights TelemetryEngine="ApplicationInsights" InstrumentationKey="9362c996-c7fd-49de-98bc-f1a3a4ff7a26" DeveloperMode="true" ClientEnabled="false" ServerEnabled="true" TelemetryVersion="1.0.0" />
     </UserJourneyBehaviors>

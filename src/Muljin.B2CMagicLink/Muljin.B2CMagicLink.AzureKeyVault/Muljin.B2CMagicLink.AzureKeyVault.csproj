@@ -14,7 +14,7 @@
     <Copyright>Muljin Pte. Ltd.</Copyright>
     <PackageProjectUrl>https://www.muljin.com</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Muljin/B2CMagicLink</RepositoryUrl>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 

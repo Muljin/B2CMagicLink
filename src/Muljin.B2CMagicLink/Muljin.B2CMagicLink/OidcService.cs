@@ -40,11 +40,22 @@ namespace Muljin.B2CMagicLink.AzureKeyVault
             _jwksUri = jwkSb.ToString();
         }
 
-        public async Task<string> BuildSerializedIdTokenAsync(string audience, int duration, string userEmail)
+
+        public async Task<string> BuildSerializedIdTokenByEmailAsync(string audience, int duration, string email)
         {
             var claims = new List<System.Security.Claims.Claim>()
             {
-                new System.Security.Claims.Claim("email", userEmail, System.Security.Claims.ClaimValueTypes.String, _oidcOptions.Issuer)
+                new System.Security.Claims.Claim("email", email, System.Security.Claims.ClaimValueTypes.String, _oidcOptions.Issuer)
+            };
+
+            return await BuildSerializedIdTokenAsync(audience, duration, claims);
+        }
+
+        public async Task<string> BuildSerializedIdTokenByObjectIdAsync(string audience, int duration, string objectId)
+        {
+            var claims = new List<System.Security.Claims.Claim>()
+            {
+                new System.Security.Claims.Claim("oid", objectId, System.Security.Claims.ClaimValueTypes.String, _oidcOptions.Issuer)
             };
 
             return await BuildSerializedIdTokenAsync(audience, duration, claims);
@@ -147,6 +158,8 @@ namespace Muljin.B2CMagicLink.AzureKeyVault
                 PropertyNamingPolicy = new JsonSnakeCaseNamingPolicy()
             });
         }
+
+        
     }
 }
 
