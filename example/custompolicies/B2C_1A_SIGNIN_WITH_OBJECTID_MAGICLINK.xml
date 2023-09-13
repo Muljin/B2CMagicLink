@@ -1,6 +1,6 @@
-<TrustFrameworkPolicy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/online/cpim/schemas/2013/06" PolicySchemaVersion="0.3.0.0" TenantId="{{tenantname}}.onmicrosoft.com" PolicyId="B2C_1A_SIGNIN_WITH_OBJECTID" PublicPolicyUri="http://{{tenantname}}.onmicrosoft.com/B2C_1A_signin_with_objectid" DeploymentMode="Development" UserJourneyRecorderEndpoint="urn:journeyrecorder:applicationinsights" TenantObjectId="{{tenantId}}">
+<TrustFrameworkPolicy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/online/cpim/schemas/2013/06" PolicySchemaVersion="0.3.0.0" TenantId="muljin.onmicrosoft.com" PolicyId="B2C_1A_SIGNIN_WITH_OBJECTID" PublicPolicyUri="http://muljin.onmicrosoft.com/B2C_1A_signin_with_objectid" DeploymentMode="Development" UserJourneyRecorderEndpoint="urn:journeyrecorder:applicationinsights" TenantObjectId="8d2c00a7-5c50-4f59-8011-2faf7454f26f">
   <BasePolicy>
-    <TenantId>{{tenantname}}.onmicrosoft.com</TenantId>
+    <TenantId>muljin.onmicrosoft.com</TenantId>
     <PolicyId>B2C_1A_TrustFrameworkExtensions</PolicyId>
   </BasePolicy>
   <BuildingBlocks>
@@ -45,12 +45,12 @@
           <DisplayName> My ID Token Hint TechnicalProfile</DisplayName>
           <Protocol Name="None" />
           <Metadata>
-            <Item Key="METADATA">{{apibaseurl}}oidc/.well-known/openid-configuration</Item>
+            <Item Key="METADATA">https://muljinmagiclinkexample.azurewebsites.net/oidc/.well-known/openid-configuration</Item>
             <!-- <Item Key="IdTokenAudience">your_optional_audience_override</Item> -->
             <!-- <Item Key="issuer">your_optional_token_issuer_override</Item> -->
           </Metadata>
           <OutputClaims>
-            <!--Sample: Read the email claim from the id_token_hint-->
+            <!--Sample: Read the object id claim from the id_token_hint-->
             <OutputClaim ClaimTypeReferenceId="objectId" />
           </OutputClaims>
         </TechnicalProfile>
@@ -94,7 +94,7 @@
     <ClaimsProvider>
       <DisplayName>Azure Active Directory</DisplayName>
       <TechnicalProfiles>
-        <TechnicalProfile Id="AAD-UserReadUsingEmailAddress">
+        <TechnicalProfile Id="AAD-UserReadUsingObjectId">
           <Metadata>
             <!--Sample: don't raise error if user not found. We have an orchestration step to handle the error message-->
             <Item Key="RaiseErrorIfClaimsPrincipalDoesNotExist">false</Item>
@@ -175,7 +175,7 @@
       <Protocol Name="OpenIdConnect" />
       <!--Sample: Set the input claims to be read from the id_token_hint-->
       <InputClaims>
-        <InputClaim ClaimTypeReferenceId="email" />
+        <InputClaim ClaimTypeReferenceId="objectId" />
       </InputClaims>
       <OutputClaims>
         <OutputClaim ClaimTypeReferenceId="displayName" />

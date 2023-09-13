@@ -9,9 +9,9 @@ namespace Muljin.B2CMagicLink.Example.Services
 {
 	public class EmailService
 	{
-		//private static string magicLinkFlowUrl = "https://Muljin.b2clogin.com/Muljin.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SIGNIN_WITH_EMAIL&client_id=64257a7a-3240-4021-8860-45af0bbd6734&nonce=defaultNonce&redirect_uri={0}&scope=openid&response_type=code";
+        //private static string magicLinkFlowUrl = "https://Muljin.b2clogin.com/Muljin.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SIGNIN_WITH_OBJECTID&client_id=64257a7a-3240-4021-8860-45af0bbd6734&nonce=defaultNonce&redirect_uri={0}&scope=openid&response_type=code";
 
-		private readonly string magicLinkFlowUrl;
+        private readonly string magicLinkFlowUrl;
 		private readonly SendGridOptions _sendGridOptions;
 
         public EmailService(IOptions<SendGridOptions> sendGridOptions,

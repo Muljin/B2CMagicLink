@@ -36,7 +36,7 @@ namespace Muljin.B2CMagicLink.Example.Services
 				});
 			}
 
-			var token = await _oidcService.BuildSerializedIdTokenAsync(_azureAdB2cOptions.ClientId, 15, email);
+			var token = await _oidcService.BuildSerializedIdTokenByObjectIdAsync(_azureAdB2cOptions.ClientId, 15, user!.Subject);
 			await _emailService.SendMagicLinkAsync(email, token);
 		}
 	}
