@@ -21,28 +21,28 @@ public interface IOidcService
     /// <summary>
     /// Build a serialised JWT token with a list of claims
     /// </summary>
-    /// <param name="audience"></param>
-    /// <param name="duration"></param>
-    /// <param name="claims"></param>
-    /// <returns></returns>
+    /// <param name="audience">The clientid of the frontend application which will be completing the login journey</param>
+    /// <param name="duration">Duration in minutes for validity of token</param>
+    /// <param name="claims">List of claims to include in token</param>
+    /// <returns>JWT token</returns>
     public Task<string> BuildSerializedIdTokenAsync(string audience, int duration, List<System.Security.Claims.Claim> claims);
 
     /// <summary>
     /// Build a serialized JWT token with the user email as a claim
     /// </summary>
-    /// <param name="audience"></param>
-    /// <param name="duration"></param>
-    /// <param name="email"></param>
-    /// <returns></returns>
+    /// <param name="audience">The clientid of the frontend application which will be completing the login journey</param>
+    /// <param name="duration">Duration in minutes for validity of token</param>
+    /// <param name="email">Email of the user, added as a cliam in the JWT token to exchange</param>
+    /// <returns>JWT token</returns>
     public Task<string> BuildSerializedIdTokenByEmailAsync(string audience, int duration, string email);
 
     /// <summary>
     /// Build a serialized JWT token with the user object ID as a claim
     /// </summary>
-    /// <param name="audience"></param>
-    /// <param name="duration"></param>
-    /// <param name="objectId"></param>
-    /// <returns></returns>
+    /// <param name="audience">The clientid of the frontend application which will be completing the login journey</param>
+    /// <param name="duration">Duration in minutes for validity of token</param>
+    /// <param name="objectId">ObjectId of the user, added as a claim in the jwt token to exchange</param>
+    /// <returns>JWT token</returns>
     public Task<string> BuildSerializedIdTokenByObjectIdAsync(string audience, int duration, string objectId);
 
 }

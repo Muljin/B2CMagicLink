@@ -13,8 +13,8 @@ namespace Muljin.B2CMagicLink
         /// <summary>
         /// Sign data and return as base64 encoded string
         /// </summary>
-        /// <param name="data"></param>
-        /// <returns></returns>
+        /// <param name="data">Arbitrary byte[] of data to be signed</param>
+        /// <returns>base64 ecoded signature</returns>
         Task<string> SignDataAsync(byte[] data);
     }
 }
