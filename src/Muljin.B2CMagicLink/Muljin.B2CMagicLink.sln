@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Muljin.B2CMagicLink.Abstrac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Muljin.B2CMagicLink.AzureKeyVault", "Muljin.B2CMagicLink.AzureKeyVault\Muljin.B2CMagicLink.AzureKeyVault.csproj", "{0B6DC618-0AC9-4B57-9A18-CB381742BB5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Muljin.B2CMagicLink.AspNetCore", "Muljin.B2CMagicLink.AspNetCore\Muljin.B2CMagicLink.AspNetCore.csproj", "{14AF7553-20BB-4F77-A14A-589FAFF9335F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0B6DC618-0AC9-4B57-9A18-CB381742BB5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B6DC618-0AC9-4B57-9A18-CB381742BB5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B6DC618-0AC9-4B57-9A18-CB381742BB5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14AF7553-20BB-4F77-A14A-589FAFF9335F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14AF7553-20BB-4F77-A14A-589FAFF9335F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14AF7553-20BB-4F77-A14A-589FAFF9335F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14AF7553-20BB-4F77-A14A-589FAFF9335F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
