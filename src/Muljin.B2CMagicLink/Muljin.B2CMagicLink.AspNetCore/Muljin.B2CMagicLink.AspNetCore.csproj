@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Muljin.B2CMagicLink</RootNamespace>
+    <AssemblyName>Muljin.B2CMagicLink.AspNetCore</AssemblyName>
+    <PackageId>Muljin.B2CMagicLink.AspNetCore</PackageId>
+    <Authors>Mahmoud Swehli</Authors>
+    <Company>Muljin Pte. Ltd.</Company>
+    <Product>Muljin.B2CMagicLink</Product>
+    <Description>Muljin Magic Link library for Azure AD B2C, Asp.net core controllers for required endpoints.</Description>
+    <Copyright>Muljin Pte. Ltd.</Copyright>
+    <PackageProjectUrl>https://www.muljin.com/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Muljin/B2CMagicLink</RepositoryUrl>
+    <Version>0.0.3</Version>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Azure" Version="1.6.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Muljin.B2CMagicLink.Abstractions" Version="0.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+      <Link>LICENSE</Link>
+    </None>
+  </ItemGroup>
+</Project>

@@ -4,6 +4,7 @@
 name: Publish MagicLink library to nuget
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - src/Muljin.B2CMagicLink/Muljin.B2CMagicLink/*.csproj
